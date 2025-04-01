@@ -1,91 +1,77 @@
 import React from 'react';
-
+import { Check } from 'lucide-react';
+import checklist from '../assets/checklist.png';
 const RecapSection = () => {
   const features = [
     {
-      title: "Channel recaps:",
+      title: "Channel recaps",
       description: "get key highlights in any channel and cut straight to what's most important"
     },
     {
-      title: "Summarize long threads:",
+      title: "Summarize long threads",
       description: "quickly catch up on long conversations in one click"
     },
     {
-      title: "AI-powered search:",
+      title: "AI-powered search",
       description: "ask a question and get clear, concise answers in real-time"
     }
   ];
 
   return (
-    <section style={{ padding: '3rem 20px' }}>
-      <div style={{
-        maxWidth: '1200px',
-        margin: 'auto',
-        borderRadius: '18px',
-        backgroundColor: 'rgb(238, 228, 213)',
-        padding: '20px',
-        display: 'flex',
-        justifyContent: 'space-between',
-        gap: '20px',
-        flexDirection: 'column',
-        '@media (min-width: 750px)': {
-          flexDirection: 'row'
-        }
-      }}>
-        <div style={{
-          padding: '30px',
-          order: 2,
-          '@media (min-width: 750px)': {
-            order: 1
-          }
-        }}>
-          <h1 style={{ fontSize: '1.8rem', marginBottom: '1rem' }}>Work smarter with Slack AI</h1>
-          <p style={{ marginBottom: '1rem' }}>Empower everyone with trusted AI, where work already happens.</p>
-          
-          <ul style={{ marginTop: '1rem', marginBottom: '2rem' }}>
-            {features.map((feature, index) => (
-              <li key={index} style={{
-                display: 'flex',
-                gap: '10px',
-                fontSize: '0.9rem',
-                alignItems: 'center',
-                marginBottom: '0.6rem'
-              }}>
-                <img src="/assets/checklist.png" alt="" style={{ width: '14px', height: '14px' }} />
-                <p>
-                  <span style={{ fontWeight: '600' }}>{feature.title}</span> {feature.description}
+    <section className="py-8 sm:py-12 lg:py-16 px-4  sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto">
+        <div className="rounded-2xl sm:rounded-3xl bg-[#EEE4D5] p-4 sm:p-6 lg:p-8">
+          <div className="flex flex-col lg:flex-row gap-6 lg:gap-12">
+            {/* Content Column */}
+            <div className="flex-1 space-y-6">
+              <div>
+                <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold">
+                  Work smarter with Slack AI
+                </h2>
+                <p className="mt-2 text-gray-700 text-sm sm:text-base">
+                  Empower everyone with trusted AI, where work already happens.
                 </p>
-              </li>
-            ))}
-          </ul>
-          
-          <div style={{
-            backgroundColor: 'green',
-            color: 'white',
-            padding: '0.5rem 1rem',
-            width: 'max-content',
-            borderRadius: '5px',
-            cursor: 'pointer'
-          }}>
-            Contact Sales
+              </div>
+
+              <ul className="space-y-4">
+                {features.map((feature, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <img
+                      src={checklist}
+                      alt="Check"
+                      className="w-6 h-6 text-green-600"
+                      style={{
+                        mixBlendMode: 'multiply',
+                      }}
+                    />
+                    
+                    <p className="text-sm sm:text-base">
+                      <span className="font-semibold">{feature.title}:</span>{' '}
+                      {feature.description}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+
+              <button className="inline-flex px-6 py-3 bg-green-800 hover:bg-green-700 text-white text-sm sm:text-base font-semibold rounded-md transition-colors">
+                Contact Sales
+              </button>
+            </div>
+
+            {/* Image Column */}
+            <div className="flex-1 lg:max-w-sm">
+              <div className="aspect-square sm:aspect-[4/3] lg:aspect-auto lg:h-full rounded-lg overflow-hidden">
+                <img
+                  src="https://img.freepik.com/free-vector/financial-insurance-guarantees-protection-your-money-gold_1150-52744.jpg" 
+                  alt=""
+                  style={{
+                    width: '100%',
+                    mixBlendMode: 'multiply',
+                  }}
+                />
+              </div>
+            </div>
           </div>
-        </div>
-        
-        <div style={{
-          maxWidth: '320px',
-          width: '100%',
-          '@media (max-width: 750px)': {
-            maxWidth: '100%'
-          }
-        }}>
-          <img 
-            src="https://img.freepik.com/free-vector/financial-insurance-guarantees-protection-your-money-gold_1150-52744.jpg" 
-            alt="" 
-            style={{ 
-              width: '100%',
-              mixBlendMode: 'multiply'
-            }}
-          />
         </div>
       </div>
     </section>
