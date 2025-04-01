@@ -3,9 +3,9 @@ import React from 'react';
 const CompareTable = () => {
   const plans = [
     { name: 'Free', current: true, button: 'Current plan', buttonClass: 'bg-gray-200 text-gray-600' },
-    { name: 'Pro', button: 'Upgrade Now', buttonClass: 'bg-green-600 text-white hover:bg-green-700' },
-    { name: 'Business+', button: 'Upgrade Now', buttonClass: 'bg-green-600 text-white hover:bg-green-700' },
-    { name: 'Enterprise Grid', button: 'Contact Sales', buttonClass: 'bg-white text-green-600 border border-green-300 hover:bg-green-50' },
+    { name: 'Pro', button: 'Upgrade Now', buttonClass: 'bg-green-800 text-white hover:bg-green-700' },
+    { name: 'Business+', button: 'Upgrade Now', buttonClass: 'bg-green-800 text-white hover:bg-green-700' },
+    { name: 'Enterprise Grid', button: 'Contact Sales', buttonClass: 'bg-white text-green-800 border border-green-800 hover:bg-green-50' },
   ];
 
   const features = [
@@ -106,7 +106,7 @@ const CompareTable = () => {
           {/* Table with margin-top to prevent header overlap */}
           <table className="w-full text-center text-gray-900 table-fixed mt-[92px]">
             {/* Sticky header with proper z-index */}
-            <thead className="sticky top-0 z-20 bg-white shadow-sm">
+            <thead className="sticky top-0 z-20 bg-white ">
               <tr>
                 {/* First column header sticky on both axes */}
                 <th className="w-[30%] sticky left-0 bg-white z-10 pt-[92px]"></th>
@@ -132,7 +132,7 @@ const CompareTable = () => {
               {features.map((section, sectionIndex) => (
                 <React.Fragment key={sectionIndex}>
                   {/* Category row with top padding for first category */}
-                  <tr className={`border-b border-gray-200 ${sectionIndex === 0 ? 'pt-[92px]' : ''}`}>
+                  <tr className={` ${sectionIndex === 0 ? 'pt-[92px]' : ''}`}>
                     <td className="py-4 px-0 text-left font-bold text-lg">{section.category}</td>
                     <td className="bg-gray-50 border-l-[34px] border-white"></td>
                     <td className="bg-gray-50 border-l-[34px] border-white"></td>
@@ -142,26 +142,26 @@ const CompareTable = () => {
                   
                   {/* Feature rows */}
                   {section.items.map((item, itemIndex) => (
-                    <tr key={itemIndex} className="border-b border-gray-200">
-                      <td className="py-3 px-0 text-left border-b border-gray-100">
+                    <tr key={itemIndex} className="">
+                      <td className="py-3 px-0 text-left ">
                         <span className="border-b-2 border-dotted border-gray-900 text-sm">{item.name}</span>
                       </td>
-                      <td className="py-3 px-3 bg-gray-50 border-l-[34px] border-white border-b border-gray-100">
+                      <td className="py-3 px-3 bg-gray-50 border-l-[34px] border-white ">
                         <div className="h-full flex items-center justify-center">
                           {renderCellContent(item.free)}
                         </div>
                       </td>
-                      <td className="py-3 px-3 bg-gray-50 border-l-[34px] border-white border-b border-gray-100">
+                      <td className="py-3 px-3 bg-gray-50 border-l-[34px] border-white  ">
                         <div className="h-full flex items-center justify-center">
                           {renderCellContent(item.pro)}
                         </div>
                       </td>
-                      <td className="py-3 px-3 bg-gray-50 border-l-[34px] border-white border-b border-gray-100">
+                      <td className="py-3 px-3 bg-gray-50 border-l-[34px] border-white  ">
                         <div className="h-full flex items-center justify-center">
                           {renderCellContent(item.business)}
                         </div>
                       </td>
-                      <td className="py-3 px-3 bg-gray-50 border-l-[34px] border-white border-b border-gray-100">
+                      <td className="py-3 px-3 bg-gray-50 border-l-[34px] border-white  ">
                         <div className="h-full flex items-center justify-center">
                           {renderCellContent(item.enterprise)}
                         </div>
