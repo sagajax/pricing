@@ -27,7 +27,7 @@ const SecuritySection = () => {
           
           <a
             href="#"
-            className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 text-base sm:text-lg transition-colors"
+            className="inline-flex items-center gap-2 underline text-blue-800 hover:text-blue-700 text-base sm:text-lg transition-colors"
           >
             Learn how Slack keeps data secure
             <ExternalLink className="w-4 h-4" />
@@ -35,7 +35,7 @@ const SecuritySection = () => {
         </div>
 
         <div className="mt-12 sm:mt-16">
-          <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-7 gap-6 sm:gap-8 justify-items-center">
+          <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-7 gap-8 sm:gap-28 justify-items-center">
             {logos.map((logo, index) => (
               <img
                 key={index}
