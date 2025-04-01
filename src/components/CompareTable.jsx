@@ -98,7 +98,7 @@ const CompareTable = () => {
   };
 
   return (
-    <div className="py-12 px-5 bg-white relative">
+    <div className="py-12 px-5 bg-white relative hidden sm:block">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl text-center mb-12 font-bold">Compare features across plans</h2>
         
